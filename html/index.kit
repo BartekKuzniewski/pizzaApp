@@ -20,10 +20,10 @@
 
             <div class="pizza-wrap">
 
-                <div class="pizza-box">
+                <div class="pizza-box first-box">
                     <h3>Pizza #1</h3>
-                    <label for="frist-diameter">Podaj średnicę:</label>
-                    <input type="number" id="frist-diameter" step="0.01" placeholder="Podaj średnicę [cm]">
+                    <label for="first-diameter">Podaj średnicę:</label>
+                    <input type="number" id="first-diameter" step="0.01" placeholder="Podaj średnicę [cm]">
                     <p class="error-text">error</p>
 
                     <label for="first-amount">Podaj ilość:</label>
@@ -35,13 +35,13 @@
                     <p class="error-text">error</p>
 
                     <div class="results">
-                        <p class="area">Pole całkowite wynosi: <br> <span class="first-area">12</span> cm<sup>2</sup> </p>
-                        <p class="price-for-cm">Cena za cm<sup>2</sup>: <span class="first-price">12</span>zł</p>
-                        <p class="choose-this">WYBIERZ TĄ!</p>
+                        <p class="area">Pole całkowite wynosi: <br> <span class="first-area"></span> cm<sup>2</sup> </p>
+                        <p class="price-for-cm">Cena za cm<sup>2</sup>: <span class="first-cost"></span>zł</p>
+                        <p class="choose-this"></p>
                     </div>
                 </div>
 
-                <div class="pizza-box">
+                <div class="pizza-box second-box">
                     <h3>Pizza #2</h3>
                     <label for="second-diameter">Podaj średnicę:</label>
                     <input type="number" id="second-diameter" placeholder="Podaj średnicę [cm]">
@@ -51,15 +51,15 @@
                     <input type="number" id="second-amount" placeholder="Podaj ilość">
                     <p class="error-text">error</p>
 
-                    <label for="seond-price">Podaj cenę:</label>
-                    <input type="number" id="seond-price" placeholder="Podaj cenę [zł]">
+                    <label for="second-price">Podaj cenę:</label>
+                    <input type="number" id="second-price" placeholder="Podaj cenę [zł]">
                     <p class="error-text">error</p>
 
 
                     <div class="results">
                         <p class="area">Pole całkowite wynosi: <br> <span class="second-area"></span> cm<sup>2</sup> </p>
-                        <p class="price-for-cm">Cena za cm<sup>2</sup>: <span class="second-price"></span>zł</p>
-                        <p class="choose-this">WYBIERZ TĄ!</p>
+                        <p class="price-for-cm">Cena za cm<sup>2</sup>: <span class="second-cost"></span>zł</p>
+                        <p class="choose-this"></p>
                     </div>
                 </div>
             </div>
@@ -69,7 +69,7 @@
         </div>
     </div>
 
-
+    <script src="/dist/js/main.min.js"></script>
 
 
 </body>

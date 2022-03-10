@@ -30,7 +30,7 @@ body {
 .wrapper {
 	width: 600px;
 	background-color: rgba(255, 255, 255, 0.7);
-	border: 3px solid black;
+	border: 1px solid black;
 	box-shadow: 0 0 10px #000;
 	border-radius: 8px;
 }
@@ -99,12 +99,14 @@ body {
 
 		.area, .price-for-cm, .choose-this {
 			margin-bottom: 10px;
-			display: none; // change to block
+			display: block; // change to block
 		}
 
 		.choose-this {
 			font-size: 16px;
 			margin-top: 20px;
+			color: rgb(43, 167, 6);
+			
 		}
 	}
 
