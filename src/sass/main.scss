@@ -28,7 +28,7 @@ body {
 }
 
 .wrapper {
-	width: 500px;
+	width: 600px;
 	background-color: #fff;
 	box-shadow: 0 0 10px #000;
 	border-radius: 8px;
@@ -45,6 +45,14 @@ body {
 
 .pizza-wrap {
 	display: flex;
+
+	.success {
+		background-color: rgba(55, 255, 55, 0.19);
+	}
+
+	.failure {
+		background-color: rgba(241, 11, 11, 0.1);
+	}
 }
 
 .pizza-box {
@@ -85,7 +93,6 @@ body {
 
 	.results {
 		padding-top: 10px;
-		font-size: 14px;
 		font-weight: bold;
 		text-align: center;
 
@@ -98,6 +105,8 @@ body {
 			margin-top: 20px;
 		}
 	}
+
+	
 
 }
 
