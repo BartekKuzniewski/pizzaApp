@@ -23,8 +23,10 @@
             <div class="pizza-wrap">
 
                 <div class="pizza-box">
+                    <h3>Pizza #1</h3>
                     <label for="diameter">Podaj średnicę:</label>
-                    <input type="number" id="diameter" step="0.01" placeholder="Podaj średnicę [cm]" class="error-input">
+                    <input type="number" id="diameter" step="0.01" placeholder="Podaj średnicę [cm]"
+                        class="error-input">
                     <p class="error-text">error</p>
 
                     <label for="amount">Podaj ilość:</label>
@@ -34,9 +36,16 @@
                     <label for="price">Podaj cenę:</label>
                     <input type="number" id="price" step="0.01" placeholder="Podaj cenę [zł]">
                     <p class="error-text">error</p>
+
+                    <div class="results">
+                        <p class="area">Pole całkowite wynosi: <br> <span class="first-area">12</span> cm<sup>2</sup> </p>
+                        <p class="price-for-cm">Cena za cm<sup>2</sup>: <span class="first-price">12</span>zł</p>
+                        <p class="choose-this">WYBIERZ TĄ!</p>
+                    </div>
                 </div>
 
                 <div class="pizza-box">
+                    <h3>Pizza #2</h3>
                     <label for="diameter">Podaj średnicę:</label>
                     <input type="number" id="diameter" placeholder="Podaj średnicę [cm]">
                     <p class="error-text">error</p>
@@ -48,11 +57,18 @@
                     <label for="price">Podaj cenę:</label>
                     <input type="number" id="price" placeholder="Podaj cenę [zł]">
                     <p class="error-text">error</p>
+
+
+                    <div class="results">
+                        <p class="area">Pole całkowite wynosi: <br> <span class="first-area">12</span> cm<sup>2</sup> </p>
+                        <p class="price-for-cm">Cena za cm<sup>2</sup>: <span class="first-price">12</span>zł</p>
+                        <p class="choose-this">WYBIERZ TĄ!</p>
+                    </div>
                 </div>
             </div>
-                <div class="button">
-                    <button class="check">Sprawdź!</button>
-                </div>
+            <div class="button">
+                <button class="check">Sprawdź!</button>
+            </div>
         </div>
     </div>
 

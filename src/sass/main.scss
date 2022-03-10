@@ -28,7 +28,7 @@ body {
 }
 
 .wrapper {
-	width: 450px;
+	width: 500px;
 	background-color: #fff;
 	box-shadow: 0 0 10px #000;
 	border-radius: 8px;
@@ -41,7 +41,6 @@ body {
 
 .text {
 	text-align: center;
-	margin-bottom: 20px;
 }
 
 .pizza-wrap {
@@ -49,7 +48,16 @@ body {
 }
 
 .pizza-box {
-	margin: 30px;
+	margin: 30px 15px;
+	padding: 20px;
+	border: 1px solid black;
+	border-radius: 4px;
+
+	h3 {
+		font-weight: lighter;
+		text-align: center;
+		margin-bottom: 15px;
+	}
 
 	label {
 		display: inline-block;
@@ -74,6 +82,23 @@ body {
 		border: 1px solid rgb(255, 45, 45);
 		background-color: rgba(211, 4, 4, 0.1);
 	}
+
+	.results {
+		padding-top: 10px;
+		font-size: 14px;
+		font-weight: bold;
+		text-align: center;
+
+		p {
+			margin-bottom: 10px;
+		}
+
+		.choose-this {
+			font-size: 16px;
+			margin-top: 20px;
+		}
+	}
+
 }
 
 .button {
