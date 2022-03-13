@@ -16,3 +16,31 @@ const secondArea = document.querySelector('.second-area');
 const secondCost = document.querySelector('.second-cost');
 
 const chooseThisPizza = document.querySelector('.choose-this');
+const checkBtn = document.querySelector('.check');
+
+let r;
+let sqr;
+
+const calculateField = (diameter, amount, price, area, cost) => {
+	r = diameter.value / 2;
+	console.log(r);
+	sqr = parseFloat(Math.PI * r * r * amount.value).toFixed(1);
+	console.log(sqr);
+
+	area.textContent = sqr;
+
+	cost.textContent = ((price.value / sqr) * 100).toFixed(2);
+};
+
+const showResults = () => {
+	calculateField(firstDiameter, firstAmount, firstPrice, firstArea, firstCost);
+	calculateField(
+		secondDiameter,
+		secondAmount,
+		secondPrice,
+		secondArea,
+		secondCost
+	);
+};
+
+checkBtn.addEventListener('click', showResults);
