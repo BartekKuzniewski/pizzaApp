@@ -28,7 +28,6 @@ const results = document.querySelectorAll('.results');
 // 	secondAmount,
 // 	secondPrice,
 // ];
-
 let sqr;
 let sqr2;
 let pricePerCm;
@@ -36,19 +35,17 @@ let pricePerCm2;
 
 const calculateField = () => {
 	let r1 = firstDiameter.value / 2;
-	sqr = parseFloat(Math.PI * r1 * r1 * firstAmount.value).toFixed(1);
-	pricePerCm = ((firstPrice.value / sqr) * 100).toFixed(2);
-	firstArea.textContent = sqr;
-	firstCost.textContent = pricePerCm;
+	sqr = parseFloat(Math.PI * r1 * r1 * firstAmount.value);
+	pricePerCm = parseFloat((firstPrice.value / sqr) * 100);
+	firstArea.textContent = sqr.toFixed(1);
+	firstCost.textContent = pricePerCm.toFixed(2);
 
 	let r2 = secondDiameter.value / 2;
-	sqr2 = parseFloat(Math.PI * r2 * r2 * secondAmount.value).toFixed(1);
-	pricePerCm2 = ((secondPrice.value / sqr2) * 100).toFixed(2);
-	secondArea.textContent = sqr2;
-	secondCost.textContent = pricePerCm2;
+	sqr2 = parseFloat(Math.PI * r2 * r2 * secondAmount.value);
+	pricePerCm2 = parseFloat((secondPrice.value / sqr2) * 100);
+	secondArea.textContent = sqr2.toFixed(1);
+	secondCost.textContent = pricePerCm2.toFixed(2);
 
-	console.log(pricePerCm);
-	console.log(pricePerCm2);
 };
 
 const firstPizzaBetter = () => {
@@ -73,19 +70,40 @@ const secondPizzaBetter = () => {
 	chooseThisPizza2.style.color = 'rgb(20, 70, 1)';
 };
 
+const bothPizzaAreGood = () => {
+	firstPizzaBox.classList.add('equal');
+	secondPizzaBox.classList.add('equal');
+
+	chooseThisPizza.textContent = 'OBIE SĄ DOBRE!';
+	chooseThisPizza.style.color = 'rgb(32, 20, 197)';
+
+	chooseThisPizza2.textContent = 'OBIE SĄ DOBRE!';
+	chooseThisPizza2.style.color = 'rgb(32, 20, 197)';
+};
+
+const addDisplayBlock = () => {
+	results.forEach((result) => {
+		result.style.display = 'block';
+	});
+};
+
 const comparePizza = () => {
 	calculateField();
-
 	if (pricePerCm2 > pricePerCm) {
-		results.forEach((result) => {
-			result.style.display = 'block';
-		});
-        firstPizzaBetter()
-	} else {
-		results.forEach((result) => {
-			result.style.display = 'block';
-		});
-        secondPizzaBetter()
+		addDisplayBlock();
+		firstPizzaBetter();
+	} else if (pricePerCm2 < pricePerCm) {
+		addDisplayBlock();
+		secondPizzaBetter();
+	} else if (pricePerCm2 === pricePerCm && sqr > sqr2) {
+		addDisplayBlock();
+		firstPizzaBetter();
+	} else if (pricePerCm2 === pricePerCm && sqr < sqr2) {
+		addDisplayBlock();
+		secondPizzaBetter();
+	} else if (pricePerCm2 === pricePerCm && sqr === sqr2) {
+		addDisplayBlock();
+		bothPizzaAreGood();
 	}
 };
 
