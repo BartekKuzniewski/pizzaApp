@@ -51,6 +51,28 @@ const calculateField = () => {
 	console.log(pricePerCm2);
 };
 
+const firstPizzaBetter = () => {
+	firstPizzaBox.classList.add('success');
+	secondPizzaBox.classList.add('failure');
+
+	chooseThisPizza.textContent = 'WYBIERZ TĄ!';
+	chooseThisPizza.style.color = 'rgb(20, 70, 1)';
+
+	chooseThisPizza2.textContent = 'TA NIE!';
+	chooseThisPizza2.style.color = 'rgb(92, 14, 0)';
+};
+
+const secondPizzaBetter = () => {
+	firstPizzaBox.classList.add('failure');
+	secondPizzaBox.classList.add('success');
+
+	chooseThisPizza.textContent = 'TA NIE!';
+	chooseThisPizza.style.color = 'rgb(92, 14, 0)';
+
+	chooseThisPizza2.textContent = 'WYBIERZ TĄ!';
+	chooseThisPizza2.style.color = 'rgb(20, 70, 1)';
+};
+
 const comparePizza = () => {
 	calculateField();
 
@@ -58,27 +80,12 @@ const comparePizza = () => {
 		results.forEach((result) => {
 			result.style.display = 'block';
 		});
-
-		firstPizzaBox.classList.add('success');
-		secondPizzaBox.classList.add('failure');
-
-		chooseThisPizza.textContent = 'WYBIERZ TĄ!';
-		chooseThisPizza.style.color = 'rgb(20, 70, 1)';
-
-		chooseThisPizza2.textContent = 'TA NIE!';
-		chooseThisPizza2.style.color = 'rgb(92, 14, 0)';
+        firstPizzaBetter()
 	} else {
 		results.forEach((result) => {
 			result.style.display = 'block';
 		});
-		firstPizzaBox.classList.add('failure');
-		secondPizzaBox.classList.add('success');
-
-		chooseThisPizza2.textContent = 'WYBIERZ TĄ!';
-		chooseThisPizza2.style.color = 'rgb(20, 70, 1)';
-
-		chooseThisPizza.textContent = 'TA NIE!';
-		chooseThisPizza.style.color = 'rgb(92, 14, 0)';
+        secondPizzaBetter()
 	}
 };
 
