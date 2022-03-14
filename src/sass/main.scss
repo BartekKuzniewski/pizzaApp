@@ -48,11 +48,11 @@ body {
 	display: flex;
 
 	.success {
-		background-color: rgba(55, 255, 55, 0.19);
+		background-color: rgba(55, 255, 55, 0.5);
 	}
 
 	.failure {
-		background-color: rgba(241, 11, 11, 0.1);
+		background-color: rgba(241, 11, 11, 0.35);
 	}
 }
 
@@ -92,21 +92,19 @@ body {
 		background-color: rgba(211, 4, 4, 0.1);
 	}
 
-	.results {
+	.results, .results2 {
 		padding-top: 10px;
 		font-weight: bold;
 		text-align: center;
+		display: none; // change to block
 
-		.area, .price-for-cm, .choose-this {
+		.area, .price-for-cm, .choose-this, .choose-this2 {
 			margin-bottom: 10px;
-			display: block; // change to block
 		}
 
-		.choose-this {
-			font-size: 16px;
+		.choose-this, .choose-this2 {
+			font-size: 20px;
 			margin-top: 20px;
-			color: rgb(43, 167, 6);
-			
 		}
 	}
 
