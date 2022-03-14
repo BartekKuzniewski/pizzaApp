@@ -18,29 +18,27 @@ const secondCost = document.querySelector('.second-cost');
 const chooseThisPizza = document.querySelector('.choose-this');
 const checkBtn = document.querySelector('.check');
 
-let r;
+
 let sqr;
+let sqr2;
+let pricePerCm;
+let pricePerCm2
 
-const calculateField = (diameter, amount, price, area, cost) => {
-	r = diameter.value / 2;
-	console.log(r);
-	sqr = parseFloat(Math.PI * r * r * amount.value).toFixed(1);
-	console.log(sqr);
 
-	area.textContent = sqr;
+const calculateField = () => {
 
-	cost.textContent = ((price.value / sqr) * 100).toFixed(2);
+	let r1 = firstDiameter.value / 2;
+	sqr = parseFloat(Math.PI * r1 * r1 * firstAmount.value).toFixed(1);
+    pricePerCm = ((firstPrice.value / sqr) * 100).toFixed(2)
+	firstArea.textContent = sqr;
+	firstCost.textContent = pricePerCm;
+
+    let r2 = secondDiameter.value / 2;
+	sqr2 = parseFloat(Math.PI * r2 * r2 * secondAmount.value).toFixed(1);
+    pricePerCm2 = ((secondPrice.value / sqr2) * 100).toFixed(2)
+	secondArea.textContent = sqr2;
+	secondCost.textContent = pricePerCm2;
 };
 
-const showResults = () => {
-	calculateField(firstDiameter, firstAmount, firstPrice, firstArea, firstCost);
-	calculateField(
-		secondDiameter,
-		secondAmount,
-		secondPrice,
-		secondArea,
-		secondCost
-	);
-};
+checkBtn.addEventListener('click', calculateField);
 
-checkBtn.addEventListener('click', showResults);
