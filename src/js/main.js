@@ -34,7 +34,6 @@ let sqr2;
 let pricePerCm;
 let pricePerCm2;
 
-
 const calculateField = () => {
 	let r1 = firstDiameter.value / 2;
 	sqr = parseFloat(Math.PI * r1 * r1 * firstAmount.value);
@@ -107,11 +106,6 @@ const comparePizza = () => {
 		addDisplayBlock();
 		bothPizzaAreGood();
 	}
-
-	// allInputs.forEach((input) => {
-	// 	input.classList.remove('error-input');
-	// 	errorMsg.textContent = '';
-	// });
 };
 
 const checkInputs = (input) => {
@@ -119,7 +113,7 @@ const checkInputs = (input) => {
 		if (el.value === '') {
 			showError(el, el.placeholder);
 		} else {
-			clearErrors(el)
+			clearErrors(el);
 		}
 	});
 };
@@ -136,19 +130,24 @@ const clearErrors = (input) => {
 	errorMsg.textContent = '';
 };
 
-const showResults = () => {
-	if (
-		firstDiameter.value === '' ||
-		firstAmount.value === '' ||
-		firstPrice.value === '' ||
-		secondDiameter.value === '' ||
-		secondAmount.value === '' ||
-		secondPrice.value === ''
-	) {
-		checkInputs(allInputs);
-	} else {
+const countErrors = () => {
+	let errorCounter = 0;
+
+	allInputs.forEach((input) => {
+		if (input.classList.contains('error-input')) {
+			errorCounter++;
+			console.log(errorCounter);
+		}
+	});
+
+	if (errorCounter === 0) {
 		comparePizza();
 	}
+};
+
+const showResults = () => {
+	checkInputs(allInputs);
+	countErrors();
 };
 
 checkBtn.addEventListener('click', showResults);
