@@ -19,19 +19,21 @@ const chooseThisPizza = document.querySelector('.choose-this');
 const chooseThisPizza2 = document.querySelector('.choose-this2');
 const checkBtn = document.querySelector('.check');
 const results = document.querySelectorAll('.results');
+const boxForInput = document.querySelectorAll('.box');
 
-// const allInputs = [
-// 	firstDiameter,
-// 	firstAmount,
-// 	firstPrice,
-// 	secondDiameter,
-// 	secondAmount,
-// 	secondPrice,
-// ];
+const allInputs = [
+	firstDiameter,
+	firstAmount,
+	firstPrice,
+	secondDiameter,
+	secondAmount,
+	secondPrice,
+];
 let sqr;
 let sqr2;
 let pricePerCm;
 let pricePerCm2;
+
 
 const calculateField = () => {
 	let r1 = firstDiameter.value / 2;
@@ -45,7 +47,6 @@ const calculateField = () => {
 	pricePerCm2 = parseFloat((secondPrice.value / sqr2) * 100);
 	secondArea.textContent = sqr2.toFixed(1);
 	secondCost.textContent = pricePerCm2.toFixed(2);
-
 };
 
 const firstPizzaBetter = () => {
@@ -55,7 +56,7 @@ const firstPizzaBetter = () => {
 	chooseThisPizza.textContent = 'WYBIERZ TĄ!';
 	chooseThisPizza.style.color = 'rgb(20, 70, 1)';
 
-	chooseThisPizza2.textContent = 'TA NIE!';
+	chooseThisPizza2.textContent = 'TEJ NIE BIERZ!';
 	chooseThisPizza2.style.color = 'rgb(92, 14, 0)';
 };
 
@@ -63,7 +64,7 @@ const secondPizzaBetter = () => {
 	firstPizzaBox.classList.add('failure');
 	secondPizzaBox.classList.add('success');
 
-	chooseThisPizza.textContent = 'TA NIE!';
+	chooseThisPizza.textContent = 'TEJ NIE BIERZ';
 	chooseThisPizza.style.color = 'rgb(92, 14, 0)';
 
 	chooseThisPizza2.textContent = 'WYBIERZ TĄ!';
@@ -89,6 +90,7 @@ const addDisplayBlock = () => {
 
 const comparePizza = () => {
 	calculateField();
+
 	if (pricePerCm2 > pricePerCm) {
 		addDisplayBlock();
 		firstPizzaBetter();
@@ -105,6 +107,33 @@ const comparePizza = () => {
 		addDisplayBlock();
 		bothPizzaAreGood();
 	}
+
+	// allInputs.forEach((input) => {
+	// 	input.classList.remove('error-input');
+	// 	errorMsg.textContent = '';
+	// });
+};
+
+const checkInputs = (input) => {
+	input.forEach((el) => {
+		if (el.value === '') {
+			showError(el, el.placeholder);
+		} else {
+			clearErrors(el)
+		}
+	});
+};
+
+const showError = (input, msg) => {
+	input.classList.add('error-input');
+	let errorMsg = input.nextElementSibling;
+	errorMsg.textContent = msg;
+};
+
+const clearErrors = (input) => {
+	input.classList.remove('error-input');
+	let errorMsg = input.nextElementSibling;
+	errorMsg.textContent = '';
 };
 
 const showResults = () => {
@@ -116,7 +145,7 @@ const showResults = () => {
 		secondAmount.value === '' ||
 		secondPrice.value === ''
 	) {
-		console.log('błąd');
+		checkInputs(allInputs);
 	} else {
 		comparePizza();
 	}

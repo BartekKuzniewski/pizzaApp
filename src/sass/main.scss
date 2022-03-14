@@ -83,12 +83,10 @@ body {
 		border: 1px solid rgb(197, 197, 197);
 		border-radius: 5px;
 	}
-
-	// adding this class when error in inputs
 	.error-text {
-		margin: 5px 0 10px 10px;
+		margin: 5px 0 15px 0;
 		color: rgb(252, 45, 45);
-		visibility: hidden; // change to visibility
+		font-size: 14px;
 	}
 
 	.error-input {
