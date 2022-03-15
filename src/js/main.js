@@ -81,6 +81,16 @@ const bothPizzaAreGood = () => {
 	chooseThisPizza2.style.color = 'rgb(32, 20, 197)';
 };
 
+const removeClasses = () => {
+	firstPizzaBox.classList.remove('success');
+	firstPizzaBox.classList.remove('failure');
+	firstPizzaBox.classList.remove('equal');
+	secondPizzaBox.classList.remove('success');
+	secondPizzaBox.classList.remove('failure');
+	secondPizzaBox.classList.remove('equal');
+	
+};
+
 const addDisplayBlock = () => {
 	results.forEach((result) => {
 		result.style.display = 'block';
@@ -89,7 +99,7 @@ const addDisplayBlock = () => {
 
 const comparePizza = () => {
 	calculateField();
-
+	removeClasses();
 	if (pricePerCm2 > pricePerCm) {
 		addDisplayBlock();
 		firstPizzaBetter();
