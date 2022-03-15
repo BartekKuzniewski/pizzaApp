@@ -88,7 +88,10 @@ const removeClasses = () => {
 	secondPizzaBox.classList.remove('success');
 	secondPizzaBox.classList.remove('failure');
 	secondPizzaBox.classList.remove('equal');
-	
+
+	results.forEach((result) => {
+		result.style.display = 'none';
+	});
 };
 
 const addDisplayBlock = () => {
@@ -99,7 +102,7 @@ const addDisplayBlock = () => {
 
 const comparePizza = () => {
 	calculateField();
-	removeClasses();
+
 	if (pricePerCm2 > pricePerCm) {
 		addDisplayBlock();
 		firstPizzaBetter();
@@ -155,6 +158,7 @@ const countErrors = () => {
 };
 
 const showResults = () => {
+	removeClasses();
 	checkInputs(allInputs);
 	countErrors();
 };
