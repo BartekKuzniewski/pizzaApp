@@ -75,10 +75,10 @@ const bothPizzaAreGood = () => {
 	secondPizzaBox.classList.add('equal');
 
 	chooseThisPizza.textContent = 'OBIE SĄ DOBRE!';
-	chooseThisPizza.style.color = 'rgb(32, 20, 197)';
+	chooseThisPizza.style.color = 'rgb(199, 146, 1)';
 
 	chooseThisPizza2.textContent = 'OBIE SĄ DOBRE!';
-	chooseThisPizza2.style.color = 'rgb(32, 20, 197)';
+	chooseThisPizza2.style.color = 'rgb(199, 146, 1)';
 };
 
 const removeClasses = () => {
