@@ -136,7 +136,6 @@ const countErrors = () => {
 	allInputs.forEach((input) => {
 		if (input.classList.contains('error-input')) {
 			errorCounter++;
-			console.log(errorCounter);
 		}
 	});
 

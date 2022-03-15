@@ -17,122 +17,124 @@ body {
 	background-position: center;
 	background-size: cover;
 	z-index: 0;
-}
 
-.hero-shadow {
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	background-color: rgba(0, 0, 0, 0.6);
-	z-index: -10;
-}
-
-.wrapper {
-	width: 600px;
-	background-color: rgba(255, 255, 255, 0.7);
-	border: 1px solid black;
-	box-shadow: 0 0 10px #000;
-	border-radius: 8px;
-}
-
-.tittle {
-	text-align: center;
-	margin: 20px 0 10px;
-}
-
-.text {
-	text-align: center;
-}
-
-.pizza-wrap {
-	display: flex;
-
-	.success {
-		background-color: rgba(55, 255, 55, 0.5);
-	}
-
-	.failure {
-		background-color: rgba(241, 11, 11, 0.35);
-	}
-
-	.equal {
-		background-color: rgba(26, 95, 245, 0.555);
-	}
-}
-
-.pizza-box {
-	margin: 30px 15px;
-	padding: 20px;
-	background-color: rgb(238, 236, 236);
-	border: 1px solid black;
-	border-radius: 4px;
-
-	h3 {
-		text-align: center;
-		margin-bottom: 15px;
-	}
-
-	label {
-		display: inline-block;
-		margin-bottom: 5px;
-	}
-
-	input {
+	.hero-shadow {
+		position: absolute;
 		width: 100%;
-		padding: 10px;
-		border: 1px solid rgb(197, 197, 197);
-		border-radius: 5px;
-	}
-	.error-text {
-		margin: 5px 0 15px 0;
-		color: rgb(252, 45, 45);
-		font-size: 14px;
+		height: 100%;
+		background-color: rgba(0, 0, 0, 0.6);
+		z-index: -10;
 	}
 
-	.error-input {
-		border: 1px solid rgb(255, 45, 45);
-		background-color: rgba(211, 4, 4, 0.1);
-	}
+	.wrapper {
+		width: 600px;
+		background-color: rgba(255, 255, 255, 0.7);
+		border: 1px solid black;
+		box-shadow: 0 0 10px #000;
+		border-radius: 8px;
 
-	.results, .results2 {
-		padding-top: 10px;
-		font-weight: bold;
-		text-align: center;
-		display: none; // change to block
-
-		.area, .price-for-cm, .choose-this, .choose-this2 {
-			margin-bottom: 10px;
+		.tittle {
+			text-align: center;
+			margin: 20px 0 10px;
 		}
 
-		.choose-this, .choose-this2 {
-			font-size: 20px;
-			margin-top: 20px;
+		.text {
+			text-align: center;
 		}
 	}
 
-	
+	.pizza-wrap {
+		display: flex;
 
-}
+		.success {
+			background-color: rgba(55, 255, 55, 0.5);
+		}
 
-.button {
-	display: flex;
-	align-items: center;
-	justify-content: center;
+		.failure {
+			background-color: rgba(241, 11, 11, 0.35);
+		}
 
-    .check {
-        margin-bottom: 20px;
-        padding: 15px 10px;
-        width: 150px;
-        font-size: 18px;
-        color: #fff;
-        background-color: rgb(39, 35, 228);
-        border: none;
-        border-radius: 8px;
-        transition: background-color .3s;
-        cursor: pointer;
+		.equal {
+			background-color: rgba(26, 95, 245, 0.555);
+		}
+	}
 
-        &:hover {
-            background-color: rgb(74, 71, 241);
-        }
-    }
+	.pizza-box {
+		margin: 30px 15px;
+		padding: 20px;
+		background-color: rgb(238, 236, 236);
+		border: 1px solid black;
+		border-radius: 4px;
+
+		h3 {
+			text-align: center;
+			margin-bottom: 15px;
+		}
+
+		label {
+			display: inline-block;
+			margin-bottom: 5px;
+		}
+
+		input {
+			width: 100%;
+			padding: 10px;
+			border: 1px solid rgb(197, 197, 197);
+			border-radius: 5px;
+		}
+		.error-text {
+			margin: 5px 0 15px 0;
+			color: rgb(252, 45, 45);
+			font-size: 14px;
+		}
+
+		.error-input {
+			border: 1px solid rgb(255, 45, 45);
+			background-color: rgba(211, 4, 4, 0.1);
+		}
+
+		.results,
+		.results2 {
+			padding-top: 10px;
+			font-weight: bold;
+			text-align: center;
+			display: none; // change to block
+
+			.area,
+			.price-for-cm,
+			.choose-this,
+			.choose-this2 {
+				margin-bottom: 10px;
+			}
+
+			.choose-this,
+			.choose-this2 {
+				font-size: 20px;
+				margin-top: 20px;
+			}
+		}
+	}
+
+	.button {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		.check {
+			margin-bottom: 20px;
+			padding: 15px 10px;
+			width: 150px;
+			font-size: 18px;
+			color: #fff;
+			background-color: rgb(39, 35, 228);
+			border: none;
+			border-radius: 8px;
+			transition: background-color 0.3s;
+			cursor: pointer;
+
+			&:hover {
+				background-color: rgb(74, 71, 241);
+			}
+		}
+	}
 }
