@@ -19,7 +19,6 @@ const chooseThisPizza = document.querySelector('.choose-this');
 const chooseThisPizza2 = document.querySelector('.choose-this2');
 const checkBtn = document.querySelector('.check');
 const results = document.querySelectorAll('.results');
-const boxForInput = document.querySelectorAll('.box');
 
 const allInputs = [
 	firstDiameter,
@@ -29,22 +28,22 @@ const allInputs = [
 	secondAmount,
 	secondPrice,
 ];
-let sqr;
-let sqr2;
+let areaOfFirstPizza;
+let areaOfSecondPizza;
 let pricePerCm;
 let pricePerCm2;
 
-const calculateField = () => {
+const calculateArea = () => {
 	let r1 = firstDiameter.value / 2;
-	sqr = parseFloat(Math.PI * r1 * r1 * firstAmount.value);
-	pricePerCm = parseFloat((firstPrice.value / sqr) * 100);
-	firstArea.textContent = sqr.toFixed(1);
+	areaOfFirstPizza = parseFloat(Math.PI * r1 * r1 * firstAmount.value);
+	pricePerCm = parseFloat((firstPrice.value / areaOfFirstPizza) * 100);
+	firstArea.textContent = areaOfFirstPizza.toFixed(1);
 	firstCost.textContent = pricePerCm.toFixed(2);
 
 	let r2 = secondDiameter.value / 2;
-	sqr2 = parseFloat(Math.PI * r2 * r2 * secondAmount.value);
-	pricePerCm2 = parseFloat((secondPrice.value / sqr2) * 100);
-	secondArea.textContent = sqr2.toFixed(1);
+	areaOfSecondPizza = parseFloat(Math.PI * r2 * r2 * secondAmount.value);
+	pricePerCm2 = parseFloat((secondPrice.value / areaOfSecondPizza) * 100);
+	secondArea.textContent = areaOfSecondPizza.toFixed(1);
 	secondCost.textContent = pricePerCm2.toFixed(2);
 };
 
@@ -101,7 +100,7 @@ const addDisplayBlock = () => {
 };
 
 const comparePizza = () => {
-	calculateField();
+	calculateArea();
 
 	if (pricePerCm2 > pricePerCm) {
 		addDisplayBlock();
@@ -109,13 +108,13 @@ const comparePizza = () => {
 	} else if (pricePerCm2 < pricePerCm) {
 		addDisplayBlock();
 		secondPizzaBetter();
-	} else if (pricePerCm2 === pricePerCm && sqr > sqr2) {
+	} else if (pricePerCm2 === pricePerCm && areaOfFirstPizza > areaOfSecondPizza) {
 		addDisplayBlock();
 		firstPizzaBetter();
-	} else if (pricePerCm2 === pricePerCm && sqr < sqr2) {
+	} else if (pricePerCm2 === pricePerCm && areaOfFirstPizza< areaOfSecondPizza) {
 		addDisplayBlock();
 		secondPizzaBetter();
-	} else if (pricePerCm2 === pricePerCm && sqr === sqr2) {
+	} else if (pricePerCm2 === pricePerCm && areaOfFirstPizza === areaOfSecondPizza) {
 		addDisplayBlock();
 		bothPizzaAreGood();
 	}
